@@ -26,7 +26,7 @@ const Footer = () => {
   </div>
   
 </footer>
-<div className=' rounded-3xl text-center pb-4 bg-gray-500  text-xl font-semibold container'>
+<div className=' rounded-xl text-center pb-4 bg-gray-500  text-xl font-semibold container'>
     <p>Copyright Mi Kabir © {getCurrentYear()} - All right reserved by ACME Industries Ltd</p>
   </div>
        </div>

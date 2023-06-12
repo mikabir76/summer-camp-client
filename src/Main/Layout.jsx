@@ -7,7 +7,7 @@ const Layout = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='py-16'>
+            <div className='py-12'>
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
