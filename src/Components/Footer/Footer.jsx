@@ -2,7 +2,8 @@ import React from 'react';
 import logo from '../../../public/logo.jpg'
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-neutral container text-neutral-content">
+       <div>
+         <footer className="footer p-10 bg-gray-500 text-xl font-semibold container text-neutral-content">
   <div>
    <img src={logo} width={120} alt="" />
     <p>Summer Camp School Training Center<br/>Providing reliable tech since 1992</p>
@@ -19,8 +20,17 @@ const Footer = () => {
         <button className="btn-style absolute h-full top-1 -mt-1 right-0 rounded-l-none">Send</button>
       </div>
   </div>
+  
 </footer>
+<div className=' text-center pb-4 bg-gray-500 text-xl font-semibold container'>
+    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+  </div>
+       </div>
     );
 };
 
 export default Footer;
+
+/* 
+
+*/
