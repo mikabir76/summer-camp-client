@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-style{
+    @apply bg-[#01A79E] py-2 px-4 rounded-lg text-white text-xl font-semibold
+}
