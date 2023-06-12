@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaLock } from "react-icons/fa";
+import {AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai"
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const [state, setState] = useState(false);
+    const toggle = ()=>{
+        setState(prevState => !prevState)
+    }
     return (
         <div className='container flex justify-center min-h-screen items-center'>
         
@@ -31,7 +36,12 @@ const Login = () => {
         </div>
         <div className="form-control">
          
-          <input type="password" placeholder="password" className="input input-bordered text-white text-xl rounded-full bg-[#0bd6cc]" />
+          <input type={state? "text" : "password"} placeholder="password" className="input input-bordered text-white text-xl relative rounded-full bg-[#0bd6cc]" />
+          <button onClick={toggle} className='text-2xl absolute right-[165px] mt-3'>
+            {
+                state? <AiOutlineEyeInvisible></AiOutlineEyeInvisible> : <AiOutlineEye></AiOutlineEye>
+            }
+          </button>
         </div>
         <div className='flex justify-between px-4 pt-4'>
             <p>Remember</p>
