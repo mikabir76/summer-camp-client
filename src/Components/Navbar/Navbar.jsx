@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../Container';
 import { Link } from 'react-router-dom';
 import logo from '../../../public/logo.jpg'
+import Theme from './Theme';
 
 const Navbar = () => {
     const navList = <>
@@ -30,6 +31,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    <Theme></Theme>
     <Link to='/login'><button className='btn-style'>Login</button></Link>
   </div>
 </div>
