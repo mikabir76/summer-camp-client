@@ -1,9 +1,13 @@
 import React from 'react';
 import logo from '../../../public/logo.jpg'
 const Footer = () => {
+    const getCurrentYear = ()=>{
+        return new Date().getFullYear()
+
+    }
     return (
-       <div>
-         <footer className="footer p-10 bg-gray-500 text-xl font-semibold container text-neutral-content">
+       <div className='text-white'>
+         <footer className="footer p-10 bg-gray-500 text-xl font-semibold container text-neutral-content rounded-2xl">
   <div>
    <img src={logo} width={120} alt="" />
     <p>Summer Camp School Training Center<br/>Providing reliable tech since 1992</p>
@@ -22,8 +26,8 @@ const Footer = () => {
   </div>
   
 </footer>
-<div className=' text-center pb-4 bg-gray-500 text-xl font-semibold container'>
-    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+<div className=' rounded-3xl text-center pb-4 bg-gray-500  text-xl font-semibold container'>
+    <p>Copyright Mi Kabir © {getCurrentYear()} - All right reserved by ACME Industries Ltd</p>
   </div>
        </div>
     );
