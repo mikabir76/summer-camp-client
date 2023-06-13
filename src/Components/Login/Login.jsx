@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaLock } from "react-icons/fa";
 import {AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai"
 import { Link } from 'react-router-dom';
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const [state, setState] = useState(false);
@@ -49,6 +50,7 @@ const Login = () => {
         </div>
                 </div>
                 <button className='btn-style w-36 mb-8 hover:bg-[#0fbdb4] mx-auto'>Login</button>
+            <SocialLogin></SocialLogin>
             </div>
         </div>
     );
