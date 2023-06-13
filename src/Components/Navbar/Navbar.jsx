@@ -1,15 +1,15 @@
 import React from 'react';
 import Container from '../Container';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../public/logo.jpg'
 import Theme from './Theme';
 
 const Navbar = () => {
     const navList = <>
-    <Link to='/'>Home</Link>
-    <Link to='/'>Instructors</Link>
-    <Link to='/login'>Classes</Link>
-    <Link to='/'>Dashboard</Link>
+    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/'>Home</NavLink>
+    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/instructors'>Instructors</NavLink>
+    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/login'>Classes</NavLink>
+    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/dashboard'>Dashboard</NavLink>
     </>
     return (
        <div className='container'>

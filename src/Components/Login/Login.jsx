@@ -3,6 +3,7 @@ import { FaLock } from "react-icons/fa";
 import {AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai"
 import { Link } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const [state, setState] = useState(false);
@@ -10,8 +11,11 @@ const Login = () => {
         setState(prevState => !prevState)
     }
     return (
-        <div className='container flex justify-center min-h-screen items-center'>
         
+        <div className='container flex justify-center min-h-screen items-center'>
+        <Helmet>
+            <title>Summer School | Login</title>
+        </Helmet>
             <div className='w-1/2 card shadow-lg bg-base-200'>
                
                 <div className=' relative'>
