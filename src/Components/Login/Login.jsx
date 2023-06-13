@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { FaLock } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 import {AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai"
 import { Link } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
     const [state, setState] = useState(false);
     const toggle = ()=>{
         setState(prevState => !prevState)
@@ -30,31 +33,33 @@ const Login = () => {
     </div>
 </div>
                 </div>
-                <div className='w-2/4 mx-auto py-8'>
+               <form onSubmit={handleSubmit(onSubmit)}>
+               <div className='w-2/4 mx-auto py-8'>
                     <div className='flex justify-center items-center gap-x-3'>
                     <h1 className='text-center text-3xl font-semibold'>User Login </h1>
                    <h3 className='flex justify-center text-3xl'> <FaLock></FaLock></h3>
                     </div>
                 <div className="form-control my-8 text-white">
          
-          <input type="text" placeholder="email" className="input input-bordered text-white text-xl rounded-full bg-[#0bd6cc]" />
+          <input type="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered text-white text-xl rounded-full bg-[#0bd6cc]" />
         </div>
         <div className="form-control">
          
-          <input type={state? "text" : "password"} placeholder="password" className="input input-bordered text-white text-xl relative rounded-full bg-[#0bd6cc]" />
-          <button onClick={toggle} className='text-2xl absolute right-[165px] mt-3'>
+          <input {...register("password", { required: true })} type={state? "text" : "password"} placeholder="password" className="input input-bordered text-white text-xl relative rounded-full bg-[#0bd6cc]" />
+          <p onClick={toggle} className='text-2xl absolute right-[165px] mt-3'>
             {
                 state? <AiOutlineEyeInvisible></AiOutlineEyeInvisible> : <AiOutlineEye></AiOutlineEye>
             }
-          </button>
+          </p>
         </div>
         <div className='flex justify-between px-4 pt-4'>
             <p>Remember</p>
             <p className='cursor-pointer'>Forget Password</p>
         </div>
                 </div>
-                <button className='btn-style w-36 mb-8 hover:bg-[#0fbdb4] mx-auto'>Login</button>
+                <button className='btn-style flex justify-center w-36 mb-8 hover:bg-[#0fbdb4] mx-auto'>Login</button>
             <SocialLogin></SocialLogin>
+               </form>
             </div>
         </div>
     );
