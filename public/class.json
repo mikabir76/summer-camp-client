@@ -1,6 +1,5 @@
 [
     {
-      "id": 1,
       "img": "https://img.freepik.com/free-photo/full-shot-kids-sitting-field_23-2149270922.jpg?size=626&ext=jpg&ga=GA1.2.1654759242.1680368383&semt=ais",
       "instructorName": "John Smith",
       "title": "football Academy",
@@ -9,7 +8,6 @@
       "price": 150
     },
     {
-      "id": 2,
       "img": "https://img.freepik.com/premium-vector/students-teacher-sports-lesson-cartoon-vector_723224-1273.jpg?size=626&ext=jpg&ga=GA1.1.1654759242.1680368383&semt=ais",
       "instructorName": "Sarah Johnson",
       "title": "Basketball Camp",
@@ -18,7 +16,6 @@
       "price": 200
     },
     {
-      "id": 3,
       "img": "https://img.freepik.com/free-photo/two-boys-with-badminton-rackets-outdoors_155003-13703.jpg?size=626&ext=jpg&ga=GA1.1.1654759242.1680368383&semt=ais",
       "instructorName": "Michael Davis",
       "title": "Tennis Academy",
@@ -27,7 +24,6 @@
       "price": 180
     },
     {
-      "id": 4,
       "img": "https://img.freepik.com/premium-photo/boy-girl-wearing-swimsuit-uses-foam-pad-practice-swimming-swimming-pool_130111-4862.jpg?size=626&ext=jpg&ga=GA1.1.1654759242.1680368383&semt=ais",
       "instructorName": "Emma Wilson",
       "title": "Swimming Lessons",
@@ -36,7 +32,6 @@
       "price": 120
     },
     {
-      "id": 5,
       "img": "https://img.freepik.com/free-photo/close-up-kids-school-gym_23-2149038732.jpg?size=626&ext=jpg&ga=GA1.1.1654759242.1680368383&semt=ais",
       "instructorName": "David Thompson",
       "title": "Gymnastics Camp",
@@ -45,7 +40,6 @@
       "price": 250
     },
     {
-      "id": 6,
       "img": "https://img.freepik.com/free-photo/full-shot-smiley-kids-posing-together_23-2149351803.jpg?size=626&ext=jpg&ga=GA1.2.1654759242.1680368383&semt=ais",
       "instructorName": "Olivia Anderson",
       "title": "Volleyball Academy",

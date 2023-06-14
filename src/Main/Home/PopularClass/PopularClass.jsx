@@ -11,13 +11,13 @@ const PopularClass = () => {
             <div>
                 <h1 className='text-4xl font-semibold text-center'>Popular Classes of our website</h1>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 gap-x-4 gap-y-8'>
                 {
                     popularClass.map(classes => <div key={classes.id}>
 
-                        <div className="card w-[400px] bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img  src={classes.img} alt="Shoes" className="rounded-xl h-64 w-full" />
+                        <div className="card w-[400px] bg-base-100 border-x-2 border-[#01A79E] shadow-xl">
+                            <figure className="">
+                                <img  src={classes.img} alt="Shoes" className="rounded-t-xl h-64 w-full" />
                             </figure>
                             <div className="card-body">
                                 <h2 className="text-3xl font-semibold text-center">{classes.title}</h2>
