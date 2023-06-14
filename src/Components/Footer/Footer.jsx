@@ -9,7 +9,7 @@ const Footer = () => {
        <div className='text-white'>
          <footer className="footer p-10 bg-gray-500 text-xl font-semibold container text-neutral-content rounded-2xl">
   <div>
-   <img src={logo} width={120} alt="" />
+   <img src={logo} className='h-40  border-[#01A79E] border-2 rounded-full' alt="" />
     <p>Summer Camp School Training Center<br/>Providing reliable tech since 1992</p>
   </div> 
   <div>

@@ -13,7 +13,7 @@ const Navbar = () => {
     </>
     return (
        <div className='container'>
-        <div className="navbar border-x-2 fixed z-10 max-w-7xl bg-white shadow-lg  rounded-lg">
+        <div className="navbar border-4 fixed z-10 max-w-7xl bg-white shadow-lg  rounded-lg">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,7 +23,7 @@ const Navbar = () => {
        {navList}
       </ul>
     </div>
-    <Link to='/' className=" text-2xl font-bold"><img width='130' src={logo} alt="" /></Link>
+    <Link to='/' className=" text-2xl font-bold"><img className='h-24 hover:scale-110 border-[#a1d8d5] border-2 rounded-full w-24'  src={logo} alt="" /></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-xl font-semibold gap-x-4">

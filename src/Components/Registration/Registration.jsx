@@ -1,12 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const Registration = () => {
+    const navigate = useNavigate();
     const [error, setError] = useState('')
     const {createUser, profileUpdate} = useContext(AuthContext)
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
@@ -25,6 +28,7 @@ const Registration = () => {
         .then(result =>{
             const loggedUser = result.user
             console.log(loggedUser)
+
             profileUpdate(data.name, data.photoURL)
             .then(()=>{
 
@@ -32,6 +36,11 @@ const Registration = () => {
             .catch(err =>{
                 console.log(err.message)
             })
+           toast(`${data.name} Register Successfully!`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false})
+        //    navigate('/')
             reset()
         })
         .catch(err=>{
@@ -101,7 +110,8 @@ const Registration = () => {
        </div>
       
        <div className='px-12 mt-8'>
-       <button className='btn-style w-full  mb-8 hover:bg-[#111d1d]'>Login</button>
+        <ToastContainer/>
+       <button className='btn-style w-full  mb-8 hover:bg-[#111d1d]'>Register</button>
        </div>
                 </div>
                
