@@ -95,8 +95,9 @@ const Registration = () => {
        <div className="form-control">
        <h3 className='text-2xl text-gray-700 ml-4 font-semibold mb-2'>Password</h3>
          
-         <input {...register("password", { required: true, minLength: 6,  pattern: /^(?=.*[A-Z])/ })} type='password' placeholder="******" className="input input-bordered text-white text-xl relative rounded-full bg-[#0bd6cc]" />
-         {errors.password?.type === 'pattern' && <p className='text-error'>* Password must have One uppercase</p>}
+         <input {...register("password", { required: true, minLength: 6,  pattern: /^(?=.*[A-Z])(?=.*[!@#$&*])/ })} type='password' placeholder="******" className="input input-bordered text-white text-xl relative rounded-full bg-[#0bd6cc]" />
+         {errors.password?.type === 'pattern' && <p className='text-error'>* Password must be One uppercase</p>}
+         {errors.password?.type === 'pattern' && <p className='text-error'>* Password must be one Special Character</p>}
          {errors.password && <span className='text-error'>* Password at least six character</span>}
        </div>
        <div className="form-control">

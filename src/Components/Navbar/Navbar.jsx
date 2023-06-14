@@ -1,13 +1,14 @@
-import React, { useContext } from 'react';
-import Container from '../Container';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../public/logo.jpg'
 import Theme from './Theme';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import useAuth from '../Hooks/useAuth';
 
 const Navbar = () => {
-  const {user} = useContext(AuthContext);
-  console.log(user)
+  const {user, logOut} = useAuth()
+  // console.log(user)
+  const handleLogOut = ()=>{
+    logOut().then(()=>{}).catch(err => console.log(err.message))
+  }
     const navList = <>
     <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/'>Home</NavLink>
     <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/instructors'>Instructors</NavLink>
@@ -26,7 +27,7 @@ const Navbar = () => {
        {navList}
       </ul>
     </div>
-    <Link to='/' className=" text-2xl font-bold"><img className='h-24 hover:scale-110 border-[#a1d8d5] border-2 rounded-full w-24'  src={logo} alt="" /></Link>
+    <Link to='/' className=" text-2xl font-bold"><img className='h-20 w-20 hover:scale-110 border-[#a1d8d5] border-2 rounded-full'  src={logo} alt="" /></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-xl font-semibold gap-x-4">
@@ -34,9 +35,14 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    
+{
+  user&& <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+  <img className='rounded-full me-4 w-12 h-12 border-2 border-black hover:scale-125' src={user?.photoURL} />
+</div>
+}
     <Theme></Theme>
-    <Link className='ml-4' to='/login'><button className='btn-style'>Login</button></Link>
+    {user?.email ?  <Link onClick={handleLogOut} className='ml-4' to='/login'><button className='btn-style'>Log Out</button></Link>:
+    <Link className='ml-4' to='/login'><button className='btn-style'>Login</button></Link>}
   </div>
 </div>
        </div>

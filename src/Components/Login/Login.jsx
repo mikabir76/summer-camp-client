@@ -5,10 +5,23 @@ import {AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai"
 import { Link } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import { Helmet } from 'react-helmet-async';
+import useAuth from '../Hooks/useAuth';
 
 const Login = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+    const {signIn} = useAuth();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const onSubmit = data => {
+    console.log(data)
+    console.log(data, data.email, data.password)
+    signIn(data.email, data.password)
+    .then(result => {
+        console.log(result.user)
+        reset()
+    })
+    .catch(err =>{
+        console.log(err)
+    })
+};
     const [state, setState] = useState(false);
     const toggle = ()=>{
         setState(prevState => !prevState)
@@ -42,10 +55,12 @@ const Login = () => {
                 <div className="form-control my-8 text-white">
          
           <input type="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered text-white text-xl rounded-full bg-[#0bd6cc]" />
+          {errors.email && <span className='text-error'>*email is Invalid</span>}
         </div>
         <div className="form-control">
          
           <input {...register("password", { required: true })} type={state? "text" : "password"} placeholder="password" className="input input-bordered text-white text-xl relative rounded-full bg-[#0bd6cc]" />
+          {errors.password && <span className='text-error'>*Password is not matched</span>}
           <p onClick={toggle} className='text-2xl absolute right-[165px] mt-3'>
             {
                 state? <AiOutlineEyeInvisible></AiOutlineEyeInvisible> : <AiOutlineEye></AiOutlineEye>
