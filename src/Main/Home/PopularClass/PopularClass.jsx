@@ -15,7 +15,7 @@ const PopularClass = () => {
     const navigate = useNavigate()
     const handleAddClass =(classes) =>{
         if(user){
-            const classInfo = {classId: classes._id, title: classes.title, img: classes.img, instructorName: classes.instructorName, enrolledStudents: classes.enrolledStudents, price: classes.price, email: user?.email}
+            const classInfo = {classId: classes._id, title: classes.title, img: classes.img, instructorName: classes.instructorName, availableSit: classes.availableSit, enrolledStudents: classes.enrolledStudents, price: classes.price, email: user?.email}
             fetch('http://localhost:5000/myclass',{
                 method: "POST",
             headers: {

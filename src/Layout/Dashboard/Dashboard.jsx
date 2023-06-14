@@ -32,11 +32,11 @@ const Dashboard = () => {
           <ul className="menu p-4 w-80 h-full text-xl text-base-content">
             
           
-            <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome> User Home</NavLink></li>
-            <li><NavLink to='/reservation' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaCalendarDay></FaCalendarDay> Reservation</NavLink></li>
-            <li><NavLink to='/history' className={({ isActive}) =>isActive ? "text-white" : ""}> <MdPayment></MdPayment> Payment History</NavLink></li>
+            <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome>Student Home </NavLink></li>
+            <li><NavLink to='/dashboard/selectClass' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaCalendarDay></FaCalendarDay> My Selected Class</NavLink></li>
+            <li><NavLink to='/reservation' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaCalendarDay></FaCalendarDay> My Enrolled Class</NavLink></li>
             <li><NavLink to='/dashboard/myCart' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaShoppingCart></FaShoppingCart> My Cart<span className="badge badge-secondary"> </span></NavLink></li>
-            <li><NavLink to='/bookings' className={({ isActive}) =>isActive ? "text-white" : ""}> <BsFillJournalBookmarkFill></BsFillJournalBookmarkFill> My Bookings</NavLink></li>
+            <li><NavLink to='/history' className={({ isActive}) =>isActive ? "text-white" : ""}> <MdPayment></MdPayment> Payment History</NavLink></li>
              
            
             <div className="divider"></div>
