@@ -5,17 +5,29 @@ import {FaDollarSign} from 'react-icons/fa'
 import useAuth from '../../../Components/Hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useCamp from '../../../Components/Hooks/useCamp';
 const PopularClass = () => {
 
     const [popularClass] = useClass();
+    const [, refetch] = useCamp()
+    // const {_id, title, img, instructorName, enrolledStudents, price} = popularClass;
     const {user}= useAuth();
     const navigate = useNavigate()
     const handleAddClass =(classes) =>{
         if(user){
-            fetch(`http://localhost:5000/myclass/${classes._id}`)
+            const classInfo = {classId: classes._id, title: classes.title, img: classes.img, instructorName: classes.instructorName, enrolledStudents: classes.enrolledStudents, price: classes.price, email: user?.email}
+            fetch('http://localhost:5000/myclass',{
+                method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(classInfo)
+            })
             .then(res => res.json())
             .then(data => {
+                
                 if(data.insertedId){
+                    refetch()
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -54,7 +66,7 @@ const PopularClass = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 gap-x-4 gap-y-8'>
                 {
-                    popularClass.map(classes => <div key={classes.id}>
+                    popularClass.map(classes => <div key={classes._id}>
 
                         <div className="card w-[400px] bg-base-100 border-x-2 border-[#01A79E] shadow-xl">
                             <figure className="">

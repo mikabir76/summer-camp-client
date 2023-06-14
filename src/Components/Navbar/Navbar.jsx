@@ -2,9 +2,11 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../public/logo.jpg'
 import Theme from './Theme';
 import useAuth from '../Hooks/useAuth';
+import useCamp from '../Hooks/useCamp';
 
 const Navbar = () => {
   const {user, logOut} = useAuth()
+  const [classes] = useCamp()
   // console.log(user)
   const handleLogOut = ()=>{
     logOut().then(()=>{}).catch(err => console.log(err.message))
@@ -12,7 +14,7 @@ const Navbar = () => {
     const navList = <>
     <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/'>Home</NavLink>
     <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/instructors'>Instructors</NavLink>
-    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/login'>Classes</NavLink>
+    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/login'>Classes {classes.length || 0}</NavLink>
    {user && <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/dashboard'>Dashboard</NavLink>}
     </>
     return (
