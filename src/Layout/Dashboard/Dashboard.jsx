@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaHome, FaCalendarDay, FaShoppingCart, FaBook, FaUsersCog, } from 'react-icons/fa'
+import {FaHome, FaCalendarDay, FaShoppingCart, FaBook, FaUsersCog, FaUsers, } from 'react-icons/fa'
 import {MdPayment} from 'react-icons/md'
 import {BsFillJournalBookmarkFill} from 'react-icons/bs'
 import {GrMenu} from 'react-icons/gr'
@@ -34,7 +34,7 @@ const Dashboard = () => {
           {
             isAdmin? <> <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome> Admin Home</NavLink></li>
             
-            <li><NavLink to='/dashboard/allStudent' className={({ isActive}) =>isActive ? "text-white" : ""}> <MdManageSearch></MdManageSearch> Manage Student</NavLink></li>
+            <li><NavLink to='/dashboard/allStudent' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaUsers></FaUsers> Manage Student</NavLink></li>
             <li><NavLink to='/manageClasses' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaBook></FaBook> Manage Classes </NavLink></li>
             </> : <>
             <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome>Student Home </NavLink></li>
