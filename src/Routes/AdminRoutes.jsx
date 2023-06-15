@@ -1,19 +1,22 @@
 import React from 'react';
-import useAuth from '../Hooks/useAuth';
+
 import { Navigate, useLocation } from 'react-router-dom';
+import useAuth from '../Components/Hooks/useAuth';
+import useAdmin from '../Components/Hooks/useAdmin';
 
 const PrivateRouter = ({children}) => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+    const [isAdmin, isAdminLoading] = useAdmin()
     const {user, loading} = useAuth()
-    if(loading){
+    if(loading || isAdminLoading){
         return <progress className="progress w-56"></progress>
     }
 
-    if(user){
+    if(user && isAdmin){
         return children
     }
-    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
+    return  <Navigate to="/login" state={{ from: location }} replace />;
 };
 
 export default PrivateRouter;

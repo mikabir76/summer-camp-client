@@ -5,13 +5,16 @@ import {AiFillDelete} from 'react-icons/ai'
 import useAuth from '../../../Components/Hooks/useAuth';
 import { FaUserCheck } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../Components/Hooks/useAxiosSecure';
 const AllStudent = () => {
     const {user} = useAuth()
+    const [axiosSecure] = useAxiosSecure();
     const { refetch, data: users = [], } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users')
-            return res.json()
+            const res = await axiosSecure('/users')
+            console.log(res.data)
+            return res.data
         },
 
 

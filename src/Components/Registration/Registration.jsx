@@ -50,6 +50,7 @@ const Registration = () => {
                             'User Register Successfully!',
                             'success'
                           )
+                          navigate('/')
                     }
                 })
             })

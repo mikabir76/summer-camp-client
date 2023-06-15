@@ -35,12 +35,13 @@ useEffect(()=>{
             console.log(data)
             const token = data.data.token;
             localStorage.setItem('access-token', token)
+            setLoading(false)
         })
        }
        else{
         localStorage.removeItem('access-token')
        }
-        setLoading(false)
+        
     })
 
     return ()=> unsubscriber()

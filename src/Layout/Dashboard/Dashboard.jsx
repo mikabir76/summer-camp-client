@@ -7,6 +7,7 @@ import {AiFillShopping} from 'react-icons/ai'
 import {ImSpoonKnife} from 'react-icons/im';
 import {MdManageSearch} from 'react-icons/md'
 import { NavLink, Outlet } from 'react-router-dom';
+import useAdmin from '../../Components/Hooks/useAdmin';
 
 
 
@@ -15,7 +16,8 @@ const Dashboard = () => {
   
 
   // TODO: admin is dynamicly Added
-  const isAdmin = false;
+  // const isAdmin = false;
+  const [isAdmin] = useAdmin()
     return (
      
        <div className='max-w-7xl mx-auto'>
