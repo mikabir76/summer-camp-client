@@ -41,7 +41,7 @@ const AllStudent = () => {
                 <title>Summer Camp | Manage Student</title>
             </Helmet>
             <div className='flex justify-evenly text-xl my-8 font-bold uppercase'>
-                <h1>Total Class Select: {users?.length || 0}</h1>
+                <h1>Total Student: {users?.length || 0}</h1>
 
             </div>
             <div className='flex justify-center text-xl items-center w-full'>

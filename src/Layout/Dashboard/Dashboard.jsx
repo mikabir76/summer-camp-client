@@ -15,7 +15,7 @@ const Dashboard = () => {
   
 
   // TODO: admin is dynamicly Added
-  const isAdmin = true;
+  const isAdmin = false;
     return (
      
        <div className='max-w-7xl mx-auto'>
