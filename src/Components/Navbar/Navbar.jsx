@@ -14,7 +14,7 @@ const Navbar = () => {
     const navList = <>
     <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/'>Home</NavLink>
     <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/instructors'>Instructors</NavLink>
-    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/login'>Classes {classes.length || 0}</NavLink>
+    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/classes'>Classes {classes.length || 0}</NavLink>
    {user && <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/dashboard'>Dashboard</NavLink>}
     </>
     return (

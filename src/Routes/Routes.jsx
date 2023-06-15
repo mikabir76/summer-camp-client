@@ -6,6 +6,10 @@ import Registration from "../Components/Registration/Registration";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import MySelectClass from "../Layout/Dashboard/StudentDashboad/MySelectClass";
 import AllStudent from "../Layout/Dashboard/AdminDashboard/allStudent";
+import AdminRoutes from "./AdminRoutes";
+import Instructors from "../Components/Instructors/Instructors";
+import Classes from "../Components/Classes/Classes";
+import Payment from "../Layout/Dashboard/StudentDashboad/Payment";
 // import ErrorPage from "../Shared/Error/ErrorPage";
 
 const router = createBrowserRouter([
@@ -24,6 +28,14 @@ const router = createBrowserRouter([
         {
           path: 'register',
           element: <Registration></Registration>
+        },
+        {
+          path: 'instructors',
+          element: <Instructors></Instructors>
+        },
+        {
+          path: 'classes',
+          element: <Classes></Classes>
         }
       ]
     },
@@ -36,8 +48,12 @@ const router = createBrowserRouter([
           element: <MySelectClass></MySelectClass>
         },
         {
+            path: 'payment',
+            element: <Payment></Payment>
+        },
+        {
           path: 'allStudent',
-          element: <AllStudent></AllStudent>
+          element: <AdminRoutes><AllStudent></AllStudent></AdminRoutes>
         }
       ]
     },

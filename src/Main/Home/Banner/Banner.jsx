@@ -10,12 +10,12 @@ const Banner = () => {
         <div id="slide1" className="carousel-item relative w-full">
             <img src={banner1} className="w-full h-[600px] rounded-xl" />
             <div className="absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full h-full transform -translate-y-1/2 rounded-xl top-2/4">
-                <div className='text-white w-1/2 space-y-4 mt-40 pl-16'>
-                    <h1 className='text-5xl font-bold'>Affordable <br /> Price For Car <br /> Servicing</h1>
-                    <p>There are many variations of passages of  available, But <br /> the majority have suffered alteration in some form</p>
+                <div className='text-white w-full text-center space-y-4 mt-40 pl-16'>
+                    <h1 className='text-5xl font-bold'>We help your <br /> kids connect better</h1>
+                    <p className='text-xl font-semibold'>Summer camps enable children to develop confidence, independence, social skills, leadership skills, and physical fitness.</p>
                     <div>
-                        <button className="btn-style border-0 font-semibold mr-4">Discover More</button>
-                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Latest Project</button>
+                        <button className="btn-style border-0 font-semibold mr-4">Popular Classes</button>
+                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Instructor</button>
                     </div>
                 </div>
             </div>
@@ -27,12 +27,12 @@ const Banner = () => {
         <div id="slide2" className="carousel-item relative w-full">
             <img src={banner2} className="w-full h-[600px] rounded-xl " />
             <div className="absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full h-full transform -translate-y-1/2 rounded-xl top-2/4">
-                <div className='text-white w-1/2 space-y-4 mt-40 pl-16'>
-                    <h1 className='text-5xl font-bold'>Affordable <br /> Price For Car <br /> Servicing</h1>
-                    <p>There are many variations of passages of  available, But <br /> the majority have suffered alteration in some form</p>
+            <div className='text-white w-full text-center space-y-4 mt-40 pl-16'>
+                    <h1 className='text-5xl font-bold'>We help your <br /> kids connect better</h1>
+                    <p className='text-xl font-semibold'>Summer camps enable children to develop confidence, independence, social skills, leadership skills, and physical fitness.</p>
                     <div>
-                        <button className="btn-style border-0 font-semibold mr-4">Discover More</button>
-                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Latest Project</button>
+                        <button className="btn-style border-0 font-semibold mr-4">Popular Classes</button>
+                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Instructor</button>
                     </div>
                 </div>
             </div>
@@ -44,12 +44,12 @@ const Banner = () => {
         <div id="slide3" className="carousel-item relative w-full">
             <img src={banner3} className="w-full h-[600px] rounded-xl" />
             <div className="absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full h-full transform -translate-y-1/2 rounded-xl top-2/4">
-                <div className='text-white w-1/2 space-y-4 mt-40 pl-16'>
-                    <h1 className='text-5xl font-bold'>Affordable <br /> Price For Car <br /> Servicing</h1>
-                    <p>There are many variations of passages of  available, But <br /> the majority have suffered alteration in some form</p>
+            <div className='text-white w-full text-center space-y-4 mt-40 pl-16'>
+                    <h1 className='text-5xl font-bold'>We help your <br /> kids connect better</h1>
+                    <p className='text-xl font-semibold'>Summer camps enable children to develop confidence, independence, social skills, leadership skills, and physical fitness.</p>
                     <div>
-                        <button className="btn-style border-0 font-semibold mr-4">Discover More</button>
-                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Latest Project</button>
+                        <button className="btn-style border-0 font-semibold mr-4">Popular Classes</button>
+                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Instructor</button>
                     </div>
                 </div>
             </div>
@@ -61,12 +61,12 @@ const Banner = () => {
         <div id="slide4" className="carousel-item relative w-full">
             <img src={banner4} className="w-full h-[600px] rounded-xl" />
             <div className="absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full h-full transform -translate-y-1/2 rounded-xl top-2/4">
-                <div className='text-white w-1/2 space-y-4 mt-40 pl-16'>
-                    <h1 className='text-5xl font-bold'>Affordable <br /> Price For Car <br /> Servicing</h1>
-                    <p>There are many variations of passages of  available, But <br /> the majority have suffered alteration in some form</p>
+            <div className='text-white w-full text-center space-y-4 mt-40 pl-16'>
+                    <h1 className='text-5xl font-bold'>We help your <br /> kids connect better</h1>
+                    <p className='text-xl font-semibold'>Summer camps enable children to develop confidence, independence, social skills, leadership skills, and physical fitness.</p>
                     <div>
-                        <button className="btn-style border-0 font-semibold mr-4">Discover More</button>
-                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Latest Project</button>
+                        <button className="btn-style border-0 font-semibold mr-4">Popular Classes</button>
+                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Instructor</button>
                     </div>
                 </div>
             </div>
@@ -76,14 +76,14 @@ const Banner = () => {
             </div>
         </div>
         <div id="slide5" className="carousel-item relative w-full">
-            <img src={banner2} className="w-full h-[600px] rounded-xl" />
+            <img src={banner3} className="w-full h-[600px] rounded-xl" />
             <div className="absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full h-full transform -translate-y-1/2 rounded-xl top-2/4">
-                <div className='text-white w-1/2 space-y-4 mt-40 pl-16'>
-                    <h1 className='text-5xl font-bold'>Affordable <br /> Price For Car <br /> Servicing</h1>
-                    <p>There are many variations of passages of  available, But <br /> the majority have suffered alteration in some form</p>
+            <div className='text-white w-full text-center space-y-4 mt-40 pl-16'>
+                    <h1 className='text-5xl font-bold'>We help your <br /> kids connect better</h1>
+                    <p className='text-xl font-semibold'>Summer camp is a specially crafted program designed for children and teenagers during their summer vacation holidays as together and have fun while learning lifelong lessons.</p>
                     <div>
-                        <button className="btn-style border-0 font-semibold mr-4">Discover More</button>
-                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Latest Project</button>
+                        <button className="btn-style border-0 font-semibold mr-4">Popular Classes</button>
+                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Instructor</button>
                     </div>
                 </div>
             </div>
@@ -95,12 +95,12 @@ const Banner = () => {
         <div id="slide6" className="carousel-item relative w-full">
             <img src={banner3} className="w-full h-[600px] rounded-xl" />
             <div className="absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full h-full transform -translate-y-1/2 rounded-xl top-2/4">
-                <div className='text-white w-1/2 space-y-4 mt-40 pl-16'>
-                    <h1 className='text-5xl font-bold'>Affordable <br /> Price For Car <br /> Servicing</h1>
-                    <p>There are many variations of passages of  available, But <br /> the majority have suffered alteration in some form</p>
+            <div className='text-white w-full text-center space-y-4 mt-40 pl-16'>
+                    <h1 className='text-5xl font-bold'>We help your <br /> kids connect better</h1>
+                    <p className='text-xl font-semibold'>Summer camps enable children to develop confidence, independence, social skills, leadership skills, and physical fitness.</p>
                     <div>
-                        <button className="btn-style border-0 font-semibold mr-4">Discover More</button>
-                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Latest Project</button>
+                        <button className="btn-style border-0 font-semibold mr-4">Popular Classes</button>
+                        <button className="border-2 py-2 px-4 font-semibold rounded-lg">Instructor</button>
                     </div>
                 </div>
             </div>
