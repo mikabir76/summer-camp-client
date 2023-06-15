@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useClass from '../../../Components/Hooks/useClass';
 import {TiTick} from 'react-icons/ti'
 import {FaDollarSign} from 'react-icons/fa'
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useCamp from '../../../Components/Hooks/useCamp';
 const PopularClass = () => {
-
+    const [error , setError] = useState('')
     const [popularClass] = useClass();
     const [, refetch] = useCamp()
     // const {_id, title, img, instructorName, enrolledStudents, price} = popularClass;
@@ -36,7 +36,16 @@ const PopularClass = () => {
                         timer: 1500
                       })
                 }
-               
+            //   else if(data.message === 'Class Already Exist'){
+            //     Swal.fire({
+            //         position: 'top-end',
+            //         icon: 'error',
+            //         title: `${classes.title} Class Already Exist`,
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //       })
+                 
+            //    }
                 console.log(data)
             })
         }

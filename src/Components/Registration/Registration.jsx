@@ -6,6 +6,7 @@ import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
 
 
 const Registration = () => {
@@ -28,10 +29,29 @@ const Registration = () => {
         .then(result =>{
             const loggedUser = result.user
             console.log(loggedUser)
+           
 
             profileUpdate(data.name, data.photoURL)
             .then(()=>{
-
+                const saveUser = {name: data.name, email: data.email, photoURL: data.photoURL }
+                fetch('http://localhost:5000/users',{
+                    method: "POST",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data)
+                    if(data.insertedId){
+                        Swal.fire(
+                            'Good job!',
+                            'User Register Successfully!',
+                            'success'
+                          )
+                    }
+                })
             })
             .catch(err =>{
                 console.log(err.message)

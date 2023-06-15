@@ -1,13 +1,29 @@
 import React from 'react';
 import google from '../../assets/google.png'
 import useAuth from '../../Components/Hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 const SocialLogin = () => {
 const {googleSignIn} = useAuth()
-
+const navigate = useNavigate();
     const handleGoogleSignIn =()=>{
         googleSignIn()
-        .then(()=>{
-
+        .then((result)=>{
+            console.log(result)
+           const loggedUser = result.user;
+           const saveUser = {name: loggedUser.displayName, email: loggedUser.email, photoURL: loggedUser.photoURL }
+           fetch('http://localhost:5000/users',{
+               method: "POST",
+               headers:{
+                   "Content-Type": "application/json"
+               },
+               body: JSON.stringify(saveUser)
+           })
+           .then(res => res.json())
+           .then(() =>{
+        
+               navigate('/')
+           })
         })
         .catch(err =>{
             console.log(err)

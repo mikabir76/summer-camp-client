@@ -15,7 +15,7 @@ const Dashboard = () => {
   
 
   // TODO: admin is dynamicly Added
-//   const isAdmin = true;
+  const isAdmin = true;
     return (
      
        <div className='max-w-7xl mx-auto'>
@@ -31,19 +31,27 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
           <ul className="menu p-4 w-80 h-full text-xl text-base-content">
             
-          
+          {
+            isAdmin? <> <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome> Admin Home</NavLink></li>
+            
+            <li><NavLink to='/dashboard/allStudent' className={({ isActive}) =>isActive ? "text-white" : ""}> <MdManageSearch></MdManageSearch> Manage Student</NavLink></li>
+            <li><NavLink to='/manageClasses' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaBook></FaBook> Manage Classes </NavLink></li>
+            </> : <>
             <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome>Student Home </NavLink></li>
             <li><NavLink to='/dashboard/selectClass' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaCalendarDay></FaCalendarDay> My Selected Class</NavLink></li>
             <li><NavLink to='/reservation' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaCalendarDay></FaCalendarDay> My Enrolled Class</NavLink></li>
             <li><NavLink to='/dashboard/myCart' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaShoppingCart></FaShoppingCart> My Cart<span className="badge badge-secondary"> </span></NavLink></li>
             <li><NavLink to='/history' className={({ isActive}) =>isActive ? "text-white" : ""}> <MdPayment></MdPayment> Payment History</NavLink></li>
+            </>
+          }
+           
              
            
             <div className="divider"></div>
             <li><NavLink to='/' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome> Home</NavLink></li>
-            <li><NavLink to='/' className={({ isActive}) =>isActive ? "text-white" : ""}> <GrMenu></GrMenu> Menu</NavLink></li>
-            <li><NavLink to='/' className={({ isActive}) =>isActive ? "text-white" : ""}> <AiFillShopping></AiFillShopping> Order</NavLink></li>
-            <li><NavLink to='/' className={({ isActive}) =>isActive ? "text-white" : ""}>Contact</NavLink></li>
+            <li><NavLink to='/' className={({ isActive}) =>isActive ? "text-white" : ""}> <GrMenu></GrMenu> Class</NavLink></li>
+            <li><NavLink to='/' className={({ isActive}) =>isActive ? "text-white" : ""}> <AiFillShopping></AiFillShopping> Instructor</NavLink></li>
+            
           </ul>
         
         </div>

@@ -5,6 +5,7 @@ import Login from "../Components/Login/Login";
 import Registration from "../Components/Registration/Registration";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import MySelectClass from "../Layout/Dashboard/StudentDashboad/MySelectClass";
+import AllStudent from "../Layout/Dashboard/AdminDashboard/allStudent";
 // import ErrorPage from "../Shared/Error/ErrorPage";
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         {
           path: 'selectClass',
           element: <MySelectClass></MySelectClass>
+        },
+        {
+          path: 'allStudent',
+          element: <AllStudent></AllStudent>
         }
       ]
     },
