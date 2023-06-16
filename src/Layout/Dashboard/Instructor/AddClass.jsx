@@ -2,44 +2,45 @@ import React from 'react';
 import Swal from 'sweetalert2';
 // import useAxiosSecure from '../../../Components/Hooks/useAxiosSecure';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../Components/Hooks/useAuth';
 
 const AddClass = () => {
     // const [axiosSecure] = useAxiosSecure();
     const { register, handleSubmit, reset } = useForm();
     // const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
-
+const {user} = useAuth();
     const onSubmit = data => {
-        
-    //     const formData = new FormData();
-    //     formData.append('image', data.image[0])
+        console.log(data)
+        const formData = new FormData();
+        formData.append('image', data.image[0])
 
-    //     fetch(img_hosting_url, {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //     .then(res => res.json())
-    //     .then(imgResponse => {
-    //         if(imgResponse.success){
-    //             const imgURL = imgResponse.data.display_url;
-    //             const {name, price, category, recipe} = data;
-    //             const newItem = {name, price: parseFloat(price), category, recipe, image:imgURL}
-    //             console.log(newItem)
-    //             axiosSecure.post('/menu', newItem)
-    //             .then(data => {
-    //                 console.log('after posting new menu item', data.data)
-    //                 if(data.data.insertedId){
-    //                     reset();
-    //                     Swal.fire({
-    //                         position: 'top-end',
-    //                         icon: 'success',
-    //                         title: 'Item added successfully',
-    //                         showConfirmButton: false,
-    //                         timer: 1500
-    //                       })
-    //                 }
-    //             })
-    //         }
-    //     })
+        // fetch(img_hosting_url, {
+        //     method: 'POST',
+        //     body: formData
+        // })
+        // .then(res => res.json())
+        // .then(imgResponse => {
+        //     if(imgResponse.success){
+        //         const imgURL = imgResponse.data.display_url;
+        //         const {name, price, category, recipe} = data;
+        //         const newItem = {name, price: parseFloat(price), category, recipe, image:imgURL}
+        //         console.log(newItem)
+        //         axiosSecure.post('/menu', newItem)
+        //         .then(data => {
+        //             console.log('after posting new menu item', data.data)
+        //             if(data.data.insertedId){
+        //                 reset();
+        //                 Swal.fire({
+        //                     position: 'top-end',
+        //                     icon: 'success',
+        //                     title: 'Item added successfully',
+        //                     showConfirmButton: false,
+        //                     timer: 1500
+        //                   })
+        //             }
+        //         })
+        //     }
+        // })
 
     };
     
@@ -60,7 +61,7 @@ const AddClass = () => {
                     <label className="label">
                         <span className="label-text">Instructor Name*</span>
                     </label>
-                    <input type="text" placeholder="Class Name"
+                    <input defaultValue={user?.displayName} readOnly type="text" placeholder="Class Name"
                     {...register("instructorName", { required: true, maxLength: 120 })}
                     className="input input-bordered w-full " />
                 </div>
@@ -81,7 +82,15 @@ const AddClass = () => {
                 </div>
             <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Available sit*</span>
+                        <span className="label-text">Instructor Email*</span>
+                    </label>
+                    <input defaultValue={user?.email} readOnly type="text" placeholder="email"
+                    {...register("email", { required: true, maxLength: 120 })}
+                    className="input input-bordered w-full " />
+                </div>
+            <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Enrolled Student*</span>
                     </label>
                     <input type="text" placeholder="Enrolled Student"
                     {...register("enrolledStudents", { required: true, maxLength: 120 })}
