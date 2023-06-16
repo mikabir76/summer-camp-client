@@ -33,7 +33,7 @@ const Registration = () => {
 
             profileUpdate(data.name, data.photoURL)
             .then(()=>{
-                const saveUser = {name: data.name, email: data.email, photoURL: data.photoURL }
+                const saveUser = {name: data.name, email: data.email, photoURL: data.photoURL, role: 'student'  }
                 fetch('http://localhost:5000/users',{
                     method: "POST",
                     headers:{

@@ -6,10 +6,12 @@ import useAuth from '../../../Components/Hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useCamp from '../../../Components/Hooks/useCamp';
+import useAdmin from '../../../Components/Hooks/useAdmin';
 const PopularClass = () => {
     const [error , setError] = useState('')
     const [popularClass] = useClass();
     const [, refetch] = useCamp()
+    const [isAdmin] = useAdmin();
     // const {_id, title, img, instructorName, enrolledStudents, price} = popularClass;
     const {user}= useAuth();
     const navigate = useNavigate()
@@ -91,7 +93,7 @@ const PopularClass = () => {
                                 </div>
                                 <div>
                                     <p className='flex items-center text-xl'> Class Fee <FaDollarSign className='text-orange-400'></FaDollarSign> {classes.price}</p>
-                                    <button onClick={()=>handleAddClass(classes)} className='border-[#01A79E] border-2 p-2 rounded-md text-xl font-semibold hover:bg-[#01A79E] hover:text-white mt-4 w-full'>Select</button>
+                                    <button onClick={()=>handleAddClass(classes)}  className='border-[#01A79E] border-2 p-2 rounded-md text-xl font-semibold hover:bg-[#01A79E] hover:text-white mt-4 w-full'>Select</button>
                                 </div>
                               </div>
                             </div>

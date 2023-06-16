@@ -10,6 +10,7 @@ import AdminRoutes from "./AdminRoutes";
 import Instructors from "../Components/Instructors/Instructors";
 import Classes from "../Components/Classes/Classes";
 import Payment from "../Layout/Dashboard/StudentDashboad/Payment";
+import AddClass from "../Layout/Dashboard/Instructor/AddClass";
 // import ErrorPage from "../Shared/Error/ErrorPage";
 
 const router = createBrowserRouter([
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
         {
             path: 'payment',
             element: <Payment></Payment>
+        },
+        // Instructor
+        {
+          path: 'addclass',
+          element: <AddClass></AddClass>
         },
         {
           path: 'allStudent',

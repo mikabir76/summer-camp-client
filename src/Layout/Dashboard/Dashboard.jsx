@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {FaHome, FaCalendarDay, FaShoppingCart, FaBook, FaUsersCog, FaUsers, } from 'react-icons/fa'
 import {MdPayment} from 'react-icons/md'
 import {BsFillJournalBookmarkFill} from 'react-icons/bs'
@@ -8,16 +8,31 @@ import {ImSpoonKnife} from 'react-icons/im';
 import {MdManageSearch} from 'react-icons/md'
 import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../../Components/Hooks/useAdmin';
+import useInstructor from '../../Components/Hooks/useInstructor';
 
 
 
 const Dashboard = () => {
   
   
+  const[ userData, setUser] = useState({});
+  // const {user} = useContext(AuthContext)
 
+  // useEffect(() =>{
+  //     fetch('http://localhost:5000/users')
+  //     .then( res=> res.json())
+  //     .then(data =>{
+  //         console.log(data)
+  //         setUser(data.user);
+  //     })
+  // },[user])
   // TODO: admin is dynamicly Added
   // const isAdmin = false;
   const [isAdmin] = useAdmin()
+  // const [isInstructor] = useInstructor();
+  // console.log(isInstructor);
+  const isInstructor = true;
+
     return (
      
        <div className='max-w-7xl mx-auto'>
@@ -34,11 +49,16 @@ const Dashboard = () => {
           <ul className="menu p-4 w-80 h-full text-xl text-base-content">
             
           {
-            isAdmin? <> <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome> Admin Home</NavLink></li>
+           isInstructor? <> <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome> Instructor Home</NavLink></li>
             
-            <li><NavLink to='/dashboard/allStudent' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaUsers></FaUsers> Manage Student</NavLink></li>
-            <li><NavLink to='/manageClasses' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaBook></FaBook> Manage Classes </NavLink></li>
-            </> : <>
+             <li><NavLink to='/dashboard/addclass' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaUsers></FaUsers> Add Class</NavLink></li>
+             <li><NavLink to='/manageClasses' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaBook></FaBook> Manage Classes </NavLink></li>
+             </>
+            // isAdmin? <> <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome> Admin Home</NavLink></li>
+            
+            // <li><NavLink to='/dashboard/allStudent' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaUsers></FaUsers> Manage Student</NavLink></li>
+            // <li><NavLink to='/manageClasses' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaBook></FaBook> Manage Classes </NavLink></li></> 
+            : <>
             <li><NavLink to='/#' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaHome></FaHome>Student Home </NavLink></li>
             <li><NavLink to='/dashboard/selectClass' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaCalendarDay></FaCalendarDay> My Selected Class</NavLink></li>
             <li><NavLink to='/reservation' className={({ isActive}) =>isActive ? "text-white" : ""}> <FaCalendarDay></FaCalendarDay> My Enrolled Class</NavLink></li>

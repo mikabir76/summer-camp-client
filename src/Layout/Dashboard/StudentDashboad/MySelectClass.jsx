@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 const MySelectClass = () => {
     const [classes, refetch] = useCamp()
+    
     // console.log(classes)
     const handleDelete = myClass =>{
     //   console.log(item)
@@ -95,7 +96,7 @@ const MySelectClass = () => {
             {myClass?.price}
             </td>
             <td className='border-2'>
-             <Link to='/dashboard/payment'> <button className="btn btn-outline btn-sm"> Enroll </button></Link>
+             <Link state={myClass?.price} to='/dashboard/payment'> <button className="btn btn-outline btn-sm"> Enroll </button></Link>
             </td>
             <td className='border-2'>
               <button onClick={()=>handleDelete(myClass)} className="btn btn-ghost text-2xl bg-red-600 text-white"> <AiFillDelete></AiFillDelete> </button>
