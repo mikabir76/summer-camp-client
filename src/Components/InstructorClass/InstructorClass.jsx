@@ -5,7 +5,9 @@ const InstructorClass = () => {
 
     const [users] = useUser()
     // console.log(users)
+    // console.log(users)
     const instructor = users.filter(instructorId => instructorId.role == 'instructor');
+
     // console.log(instructor)
     return (
       <div className='max-w-7xl mx-auto my-16'>
@@ -16,7 +18,7 @@ const InstructorClass = () => {
             <figure className="px-10 pt-10">
             <div className="avatar">
             <div className="w-28 rounded-full">
-              <img src={person.img} />
+              <img src={person?.photoURL} />
             </div>
           </div>
             </figure>

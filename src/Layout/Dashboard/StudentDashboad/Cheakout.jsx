@@ -5,7 +5,7 @@ import useAuth from '../../../Components/Hooks/useAuth';
 
 const Cheakout = ({price}) => {
   const {user} = useAuth()
-    console.log(price)
+    // console.log(price)
     const [clientSecrets, setClientSecrets] = useState('')
 const [isError, setIsError] = useState('')
 const [cardSuccess, setCardSuccess] = useState('')
@@ -14,10 +14,10 @@ const [proccessing, setProccessing] = useState(false)
     const elements = useElements()
     const [axiosSecure] = useAxiosSecure()
     useEffect(()=>{
-      console.log(price)
+      // console.log(price)
         axiosSecure.post('/create-payment-intent', {price})
         .then(res => {
-            console.log(res.data.clientSecret)
+            // console.log(res.data.clientSecret)
             setClientSecrets(res.data.clientSecret)
         })
     },[])
@@ -32,18 +32,18 @@ const [proccessing, setProccessing] = useState(false)
         if(card == null){
             return
         }
-        console.log(card)
+        // console.log(card)
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
             card
         })
         if(error){
-            console.log('error', error)
+            // console.log('error', error)
             setIsError(error.message)
         }
         else{
           setIsError('')
-            console.log('payment Method', paymentMethod)
+            // console.log('payment Method', paymentMethod)
             setCardSuccess('Paymet has been successfully!')
         }
         setProccessing(true)
@@ -60,9 +60,9 @@ const [proccessing, setProccessing] = useState(false)
           },
         );
         if(confirmError){
-          console.log(confirmError)
+          // console.log(confirmError)
         }
-        console.log(paymentIntent)
+        // console.log(paymentIntent)
         setProccessing(false)
         if(paymentIntent.status === 'succeeded'){
           

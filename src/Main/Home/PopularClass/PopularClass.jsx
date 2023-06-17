@@ -48,7 +48,7 @@ const PopularClass = () => {
             //       })
                  
             //    }
-                console.log(data)
+                // console.log(data)
             })
         }
         else{

@@ -9,12 +9,12 @@ import { useLocation } from 'react-router-dom';
 const Payment = ({state}) => {
     const location = useLocation();
     const data = location.state;
-console.log(data)
+// console.log(data)
     const stripePromise= loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK)
     const [classes] = useCamp();
     // console.log(classes.map(price => ))
     const total = classes.reduce((sum, item)=> sum + item.price, 0)
-    console.log(total)
+    // console.log(total)
 //   const priceClass = classes.map(price => <Cheakout price={price}></Cheakout>)
    
     return (

@@ -15,7 +15,7 @@ const Registration = () => {
     const {createUser, profileUpdate} = useContext(AuthContext)
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        // console.log(data)
         
         if(data.password !== data.confirm){
             setError('Password is invalid')
@@ -28,7 +28,7 @@ const Registration = () => {
         createUser(data.email, data.password)
         .then(result =>{
             const loggedUser = result.user
-            console.log(loggedUser)
+            // console.log(loggedUser)
            
 
             profileUpdate(data.name, data.photoURL)
@@ -43,7 +43,7 @@ const Registration = () => {
                 })
                 .then(res => res.json())
                 .then(data =>{
-                    console.log(data)
+                    // console.log(data)
                     if(data.insertedId){
                         Swal.fire(
                             'Good job!',

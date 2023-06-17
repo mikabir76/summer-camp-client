@@ -17,12 +17,12 @@ const Dashboard = () => {
   const [userData, setUser] = useState({});
   
   const {user} = useContext(AuthContext)
-console.log(user)
+// console.log(user)
   useEffect(() => {
     fetch(`https://summer-camp-school-server-wine.vercel.app/users/admin/${user?.email}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data.user)
+        // console.log(data.user)
         setUser(data.user);
       })
   }, [user])
