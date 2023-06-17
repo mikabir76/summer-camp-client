@@ -77,7 +77,7 @@ const PopularClass = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 gap-x-4 gap-y-8'>
                 {
-                    popularClass.map(classes => <div key={classes._id}>
+                    popularClass.slice(0, 6).map(classes => <div key={classes._id}>
 
                         <div className="card w-[400px] bg-base-100 border-x-2 border-[#01A79E] shadow-xl">
                             <figure className="">

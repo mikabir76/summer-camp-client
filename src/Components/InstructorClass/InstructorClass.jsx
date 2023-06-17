@@ -4,9 +4,9 @@ import useUser from '../Hooks/useUser';
 const InstructorClass = () => {
 
     const [users] = useUser()
-    console.log(users)
+    // console.log(users)
     const instructor = users.filter(instructorId => instructorId.role == 'instructor');
-    console.log(instructor)
+    // console.log(instructor)
     return (
       <div className='max-w-7xl mx-auto my-16'>
         <h1 className='text-4xl text-center mb-8'>All Popular Instructor</h1>

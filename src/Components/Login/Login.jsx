@@ -15,8 +15,8 @@ const Login = () => {
     const navigate = useNavigate();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const onSubmit = data => {
-    console.log(data)
-    console.log(data, data.email, data.password)
+    // console.log(data)
+    // console.log(data, data.email, data.password)
     signIn(data.email, data.password)
     .then(result => {
         console.log(result.user)

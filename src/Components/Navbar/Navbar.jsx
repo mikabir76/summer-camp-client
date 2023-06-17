@@ -19,11 +19,11 @@ const Navbar = () => {
     fetch('https://summer-camp-school-server-wine.vercel.app/users')
     .then(res => res.json())
     .then(data=>{
-      console.log(data)
+      // console.log(data)
       setDataUser(data)
     })
   },[])
-  console.log(dataUser)
+  // console.log(dataUser)
   // const person = dataUser.map(admin => admin.role === 'admin')
   // console.log(person)
   // console.log(user)

@@ -9,7 +9,7 @@ const navigate = useNavigate();
     const handleGoogleSignIn =()=>{
         googleSignIn()
         .then((result)=>{
-            console.log(result)
+            // console.log(result)
            const loggedUser = result.user;
            const saveUser = {name: loggedUser.displayName, email: loggedUser.email, photoURL: loggedUser.photoURL, }
            fetch('https://summer-camp-school-server-wine.vercel.app/users',{

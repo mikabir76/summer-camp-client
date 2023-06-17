@@ -15,7 +15,7 @@ const AllStudent = () => {
         queryKey: ['users'],
         queryFn: async () => {
             const res = await axiosSecure('/users')
-            console.log(res.data)
+            // console.log(res.data)
             return res.data
         },
 

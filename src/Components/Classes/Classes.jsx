@@ -1,9 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useClass from '../Hooks/useClass';
 import { TiTick } from 'react-icons/ti';
 import { FaDollarSign } from 'react-icons/fa';
+import useCamp from '../Hooks/useCamp';
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../Hooks/useAuth';
+import Swal from 'sweetalert2';
+import useUser from '../Hooks/useUser';
 
 const Classes = () => {
+    const [error , setError] = useState('')
+    const [users] = useUser()
+    const [, refetch] = useCamp()
+    // const [isAdmin] = useAdmin();
+    // const {_id, title, img, instructorName, enrolledStudents, price} = popularClass;
+    const {user}= useAuth();
+    const navigate = useNavigate()
+    const handleAddClass =(classes) =>{
+        if(user){
+            const classInfo = {classId: classes._id, title: classes.title, img: classes.img, instructorName: classes.instructorName, availableSit: classes.availableSit, enrolledStudents: classes.enrolledStudents, price: classes.price, email: user?.email}
+            fetch('https://summer-camp-school-server-wine.vercel.app/myclass',{
+                method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(classInfo)
+            })
+            .then(res => res.json())
+            .then(data => {
+                
+                if(data.insertedId){
+                    refetch()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${classes.title} class has been saved`,
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            //   else if(data.message === 'Class Already Exist'){
+            //     Swal.fire({
+            //         position: 'top-end',
+            //         icon: 'error',
+            //         title: `${classes.title} Class Already Exist`,
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //       })
+                 
+            //    }
+                // console.log(data)
+            })
+        }
+        else{
+           
+            Swal.fire({
+                title: 'Please login to Select the class',
+               
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#01A79E',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login Now!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                 navigate('/login')
+                }
+              })
+        }
+    }
+
     const [popularClass] = useClass();
     const approvedClass = popularClass.filter(classes => classes.status === 'approved');
     // console.log(popularClass)
@@ -30,7 +96,7 @@ const Classes = () => {
                             </div>
                             <div>
                                 <p className='flex items-center text-xl'> Class Fee <FaDollarSign className='text-orange-400'></FaDollarSign> {classes.price}</p>
-                                <button onClick={()=>handleAddClass(classes)}  className='border-[#01A79E] border-2 p-2 rounded-md text-xl font-semibold hover:bg-[#01A79E] hover:text-white mt-4 w-full'>Select</button>
+                                <button disabled={users.role=='admin' || users.role == 'instructor'} onClick={()=>handleAddClass(classes)}  className='border-[#01A79E] border-2 p-2 rounded-md text-xl font-semibold hover:bg-[#01A79E] hover:text-white mt-4 w-full'>Select</button>
                             </div>
                           </div>
                         </div>
