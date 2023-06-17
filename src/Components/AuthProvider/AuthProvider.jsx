@@ -29,18 +29,19 @@ const googleSignIn = ()=>{
 useEffect(()=>{
     const unsubscriber = onAuthStateChanged(auth, (currentUser)=>{
         setUser(currentUser)
-       if(currentUser){
-        axios.post('http://localhost:5000/jwt', {email: currentUser.email})
-        .then(data=>{
-            console.log(data)
-            const token = data.data.token;
-            localStorage.setItem('access-token', token)
-            setLoading(false)
-        })
-       }
-       else{
-        localStorage.removeItem('access-token')
-       }
+        setLoading(false)
+    //    if(currentUser){
+    //     axios.post('https://summer-camp-school-server-wine.vercel.app/jwt', {email: currentUser.email})
+    //     .then(data=>{
+    //         // console.log(data)
+    //         const token = data.data.token;
+    //         localStorage.setItem('access-token', token)
+           
+    //     })
+    //    }
+    //    else{
+    //     localStorage.removeItem('access-token')
+    //    }
         
     })
 

@@ -3,19 +3,38 @@ import logo from '../../../public/logo.jpg'
 import Theme from './Theme';
 import useAuth from '../Hooks/useAuth';
 import useCamp from '../Hooks/useCamp';
+import useAdmin from '../Hooks/useAdmin';
+import useInstructor from '../Hooks/useInstructor';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const {user, logOut} = useAuth()
   const [classes] = useCamp()
+  const [dataUser, setDataUser] = useState({})
+  // const [isAdmin] = useAdmin();
+  // console.log(isAdmin)
+  // const [isInstructor] = useInstructor();
+  // console.log(isInstructor)
+  useEffect(()=>{
+    fetch('https://summer-camp-school-server-wine.vercel.app/users')
+    .then(res => res.json())
+    .then(data=>{
+      console.log(data)
+      setDataUser(data)
+    })
+  },[])
+  console.log(dataUser)
+  // const person = dataUser.map(admin => admin.role === 'admin')
+  // console.log(person)
   // console.log(user)
   const handleLogOut = ()=>{
     logOut().then(()=>{}).catch(err => console.log(err.message))
   }
     const navList = <>
     <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/'>Home</NavLink>
-    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/instructors'>Instructors</NavLink>
-    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/classes'>Classes {classes.length || 0}</NavLink>
-   {user && <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/dashboard'>Dashboard</NavLink>}
+    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/instructor'>Instructors</NavLink>
+    <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/classes'>Classes</NavLink>
+   <NavLink className={({ isActive}) => isActive ? " text-[#01A79E]" : "" } to='/dashboard'>Dashboard</NavLink>
     </>
     return (
        <div className='container'>

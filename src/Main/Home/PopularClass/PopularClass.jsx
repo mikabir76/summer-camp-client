@@ -18,7 +18,7 @@ const PopularClass = () => {
     const handleAddClass =(classes) =>{
         if(user){
             const classInfo = {classId: classes._id, title: classes.title, img: classes.img, instructorName: classes.instructorName, availableSit: classes.availableSit, enrolledStudents: classes.enrolledStudents, price: classes.price, email: user?.email}
-            fetch('http://localhost:5000/myclass',{
+            fetch('https://summer-camp-school-server-wine.vercel.app/myclass',{
                 method: "POST",
             headers: {
                 "Content-Type" : "application/json"

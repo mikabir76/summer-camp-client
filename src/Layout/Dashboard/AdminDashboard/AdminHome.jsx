@@ -1,7 +1,7 @@
 import React from 'react';
-import useAuth from '../Hooks/useAuth';
+import useAuth from '../../../Components/Hooks/useAuth';
 
-const Instructors = () => {
+const AdminHome = () => {
     const {user} = useAuth()
     return (
         <div>
@@ -10,4 +10,4 @@ const Instructors = () => {
     );
 };
 
-export default Instructors;
+export default AdminHome;

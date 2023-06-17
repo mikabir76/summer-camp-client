@@ -11,8 +11,8 @@ const navigate = useNavigate();
         .then((result)=>{
             console.log(result)
            const loggedUser = result.user;
-           const saveUser = {name: loggedUser.displayName, email: loggedUser.email, photoURL: loggedUser.photoURL }
-           fetch('http://localhost:5000/users',{
+           const saveUser = {name: loggedUser.displayName, email: loggedUser.email, photoURL: loggedUser.photoURL, }
+           fetch('https://summer-camp-school-server-wine.vercel.app/users',{
                method: "POST",
                headers:{
                    "Content-Type": "application/json"

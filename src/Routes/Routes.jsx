@@ -11,7 +11,13 @@ import Instructors from "../Components/Instructors/Instructors";
 import Classes from "../Components/Classes/Classes";
 import Payment from "../Layout/Dashboard/StudentDashboad/Payment";
 import AddClass from "../Layout/Dashboard/Instructor/AddClass";
-// import ErrorPage from "../Shared/Error/ErrorPage";
+import ManageClasses from "../Layout/Dashboard/AdminDashboard/ManageClasses";
+import AdminHome from "../Layout/Dashboard/AdminDashboard/AdminHome";
+import InstructorClass from "../Components/InstructorClass/InstructorClass";
+import INstructorCamp from "../Layout/Dashboard/Instructor/InstructorCamp/INstructorCamp";
+
+import ErrorPage from "../Shared/Error/ErrorPage";
+import PrivateRouter from "../Components/PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -30,19 +36,21 @@ const router = createBrowserRouter([
           path: 'register',
           element: <Registration></Registration>
         },
-        {
-          path: 'instructors',
-          element: <Instructors></Instructors>
-        },
+        
         {
           path: 'classes',
           element: <Classes></Classes>
-        }
+        },
+        {
+          path: 'instructor',
+          element: <InstructorClass></InstructorClass>
+
+        },
       ]
     },
     {
       path: 'dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRouter><Dashboard></Dashboard></PrivateRouter>,
       children: [
         {
           path: 'selectClass',
@@ -58,15 +66,34 @@ const router = createBrowserRouter([
           element: <AddClass></AddClass>
         },
         {
+          path: 'instructors',
+          element: <Instructors></Instructors>
+        },
+       
+        {
+          path: 'adminhome',
+          element: <AdminHome></AdminHome>
+        },
+        
+        {
           path: 'allStudent',
-          element: <AdminRoutes><AllStudent></AllStudent></AdminRoutes>
+          element: <AllStudent></AllStudent>
+        },
+        {
+          path: 'manageclass',
+          element: <ManageClasses></ManageClasses>
+        
+        },
+        {
+          path: 'instructorclass',
+          element: <INstructorCamp></INstructorCamp>
         }
       ]
     },
-    // {
-    //   path: '*',
-    //   element: <ErrorPage></ErrorPage>
-    // }
+    {
+      path: '*',
+      element: <ErrorPage></ErrorPage>
+    }
   ]);
 
   export default router;

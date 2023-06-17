@@ -11,14 +11,14 @@ const CustomersReviews = () => {
   <figure className="px-10 pt-10">
   <div className="avatar">
   <div className="w-28 rounded-full">
-    <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=1380&t=st=1683282544~exp=1683283144~hmac=379d91f4819091ea0f9ec75542f0f560f24b60aac8e7d1061c1bcb5e6457a549" />
+    <img src="https://img.freepik.com/free-photo/successful-child-with-graduation-cap-backpack-full-books_1098-3455.jpg?size=626&ext=jpg&ga=GA1.2.1654759242.1680368383&semt=ais" />
   </div>
 </div>
   </figure>
   <div className="card-body  items-center text-center">
     <h2 className="card-title">Shelley M. Moss</h2>
     <p className='flex text-orange-600'><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar></p>
-    <p>"Good quality and service unbeatable. Highly recommended!."</p>
+    <p>"Good quality and Class unbeatable. Highly recommended!."</p>
 
   </div>
 </div>
@@ -26,14 +26,14 @@ const CustomersReviews = () => {
   <figure className="px-10 pt-10">
   <div className="avatar">
   <div className="w-28 rounded-full">
-    <img src="https://img.freepik.com/free-photo/portrait-handsome-young-man-with-crossed-arms_176420-15569.jpg?size=626&ext=jpg&ga=GA1.2.1654759242.1680368383&semt=sph" />
+    <img src="https://img.freepik.com/premium-photo/high-angle-smiley-boy-with-glasses-studying_23-2148355253.jpg?size=626&ext=jpg&ga=GA1.2.1654759242.1680368383&semt=ais" />
   </div>
 </div>
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">John Barlin</h2>
     <p className='flex text-orange-600'><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar></p>
-    <p>"Good quality and service unbeatable. Highly recommended!."</p>
+    <p>"Good quality and Class unbeatable. Highly recommended!."</p>
 
   </div>
 </div>
@@ -41,14 +41,14 @@ const CustomersReviews = () => {
   <figure className="px-10 pt-10">
   <div className="avatar">
   <div className="w-28 rounded-full">
-    <img src="https://img.freepik.com/free-photo/waistup-shot-bothered-pissed-goodlooking-african-man-with-afro-hairstyle-frowning-from-irrita_1258-55206.jpg?size=626&ext=jpg&ga=GA1.1.1654759242.1680368383&semt=sph" />
+    <img src="https://img.freepik.com/free-photo/cute-schoolgirl-uniform-holding-notepads-classroom_23-2148224862.jpg?size=626&ext=jpg&ga=GA1.2.1654759242.1680368383&semt=ais" />
   </div>
 </div>
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Sonya Wenzel</h2>
     <p className='flex text-orange-600'><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar></p>
-    <p>"Good quality and service unbeatable. Highly recommended!."</p>
+    <p>"Good quality and Class unbeatable. Highly recommended!."</p>
 
   </div>
 </div>
@@ -56,14 +56,14 @@ const CustomersReviews = () => {
   <figure className="px-10 pt-10">
   <div className="avatar">
   <div className="w-28 rounded-full">
-    <img src="https://img.freepik.com/premium-photo/portrait-happy-young-casual-man-standing_171337-29744.jpg?size=626&ext=jpg&ga=GA1.1.1654759242.1680368383&semt=sph" />
+    <img src="https://img.freepik.com/free-photo/smiley-boy-holding-stack-books_23-2148414545.jpg?size=626&ext=jpg&ga=GA1.2.1654759242.1680368383&semt=ais" />
   </div>
 </div>
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Minanda W.</h2>
     <p className='flex text-orange-600'><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar><FaStar></FaStar></p>
-    <p>"Good quality and service unbeatable. Highly recommended!."</p>
+    <p>"Good quality and Class unbeatable. Highly recommended!."</p>
 
   </div>
 </div>
